@@ -21,7 +21,7 @@ http.use(function(req, res, next) {
 	}
 });
 
-http.post('/callback', function(req, res) {
+http.post('/events', function(req, res) {
 	var result = req.body.result;
 	console.log(result[0]);
 	if (!result || !result.length || !result[0].content) {
