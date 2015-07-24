@@ -11,6 +11,7 @@ var port = config.port;
 http.use(bodyParser.json());
 
 http.use(function(req, res, next) {
+	// Refer to https://developers.line.me/businessconnect/development-bot-server#signature_validation
 	var channelSignature = req.get('X-LINE-ChannelSignature');
 	var sha256 = CryptoJS.HmacSHA256(JSON.stringify(req.body), config.channelSecret);
 	var base64encoded = CryptoJS.enc.Base64.stringify(sha256);
@@ -23,7 +24,6 @@ http.use(function(req, res, next) {
 
 http.post('/events', function(req, res) {
 	var result = req.body.result;
-	console.log(result[0]);
 	if (!result || !result.length || !result[0].content) {
 		res.status(400).end();
 		return;
@@ -32,6 +32,7 @@ http.post('/events', function(req, res) {
 	var from = content.from;
 	var text = content.text;
 
+	// Refer to https://developers.line.me/businessconnect/api-reference#sending_message
 	sendMsg(config.echoBotMid, {
 		contentType: 1,
 		toType: 1,
