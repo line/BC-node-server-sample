@@ -6,7 +6,7 @@
     "line",
     "bc"
   ],
-  "author": "George Duan <georgeiscoming@gmail.com>",
+  "author": "",
   "scripts": {
     "start": "node server.js"
   },

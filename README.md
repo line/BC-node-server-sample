@@ -18,17 +18,16 @@ It is a echo server that shows some functions of [LINE Bussiness Connect](https:
     $ npm install
 ```
 
-* Add configurations.json under config/beta folder
+* Add configurations.json under config/beta folder (remeber to remove the comments)
 ```
     {
-      "port": , // due to some nCloud issue, port 3000 is not suggested.
-      "channelUrl": "",
-      "channelToken": "",
-      "channelId": ,
-      "eventToChannelId": ,
-      "eventType": "",
-      "channelSecret": "",
-      "echoBotMid": "" // You can set the mid to your own line mid or test account's.
+      "port": ,             // Port where you put your service.
+      "channelUrl": "",     // https://api.line.me 
+      "channelToken": "",   // Get your channelToken in https://developers.line.me/channels/tech/CHANNEL_ID
+      "channelId": "",      // Your channel id
+      "eventToChannelId":"",// Fixed value. 1383378250
+      "eventType": "",      // Fixed value. 138311608800106203
+      "channelSecret": ""   // Refer to https://developers.line.me/channels/CHANNEL_ID
     }
 ```
 
