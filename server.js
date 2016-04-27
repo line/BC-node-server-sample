@@ -40,7 +40,7 @@ http.post('/events', verifyRequest, function(req, res) {
 	var text = content.text;
 
 	// Refer to https://developers.line.me/businessconnect/api-reference#sending_message
-	sendMsg(config.echoBotMid, {
+	sendMsg(from, {
 		contentType: 1,
 		toType: 1,
 		text: 'respond'
