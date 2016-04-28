@@ -35,12 +35,12 @@ http.post('/events', verifyRequest, function(req, res) {
 	// mid
 	var from = content.from;
 	// Content type would be possibly text/image/video/audio/gps/sticker/contact.
-	var type = content.type;
+	var type = content.contentType;
 	// assume it's text type here.
 	var text = content.text;
 
 	// Refer to https://developers.line.me/businessconnect/api-reference#sending_message
-	sendMsg(config.echoBotMid, {
+	sendMsg(from, {
 		contentType: 1,
 		toType: 1,
 		text: 'respond'
